@@ -1,1 +1,16 @@
-This is an introduction to me. I am a human from the planet Earth, maybe. I don't seem to understand the basics of command prompts but I am getting used to it. I was born on a date in a place, then I was raised in a different place. Once I reached adulthood I accomplished things and then continued to do more things. This has been text about me.
+# Who am I
+
+    * Where are you from? Planet Earth
+    * What do you do? I exist.
+    * Do you have previous experience with technology/data? Yes.
+
+    # Why am I here? I need to learn more.
+
+    * What has brought you to Ironhack? Because I need to learn more.
+    * What knowledge/skills do you expect to learn in this bootcamp? More.
+
+    # What will I do after the bootcamp? Work.
+
+    * Which industry will you seek employment in? The one that hires me.
+    * What will your future role look like? An important one.
+    * What is your career goal? Create a Fortune 500 gaming company.
