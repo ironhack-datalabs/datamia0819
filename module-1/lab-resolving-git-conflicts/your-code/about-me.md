@@ -13,4 +13,4 @@
 
 * Which industry will you seek employment in? Tech and Fintech
 * What will your future role look like? Data scientest, business analyst
-* What is your career goal? Solve a problem sadas
+* What is your career goal? Solve a problem sadass
