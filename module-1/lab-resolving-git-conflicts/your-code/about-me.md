@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Who am I
 Dave Jean
 Fort Lauderdale, Fl
@@ -14,3 +15,6 @@ Python, SQL and maybe R
 A Data Analytics role in any industry will do.
 Succesful and a key contributor to any company I work with's success
 To eventually run a Data Analytics Consultant firm
+=======
+Hi My name is Dave Jean, and I'm a 24 year-old young man from FL.
+>>>>>>> b92f7d7d759b2daccca0dcc4844f934cd7fc9723
