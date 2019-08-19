@@ -1,1 +1,2 @@
 This is an introduction to me. I am a human from the planet Earth, maybe. I don't seem to understand the basics of command prompts but I am getting used to it. I was born on a date in a place, then I was raised in a different place. Once I reached adulthood I accomplished things and then continued to do more things. This has been text about me.
+Now I have added another line.
