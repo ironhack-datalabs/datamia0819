@@ -2,7 +2,7 @@
 
 * Where are you from? Jordan
 * What do you do? Code
-* Do you have previous experience with technology/data? Blockchain, Iot, Python
+* Do you have previous experience with technology/data? Blockchain, Iot, Python a
 
 # Why am I here
 
