@@ -9,6 +9,7 @@ Just manipulating data in excel
 
 # Why am I here
 
+
 * What has brought you to Ironhack?
 Want to improve my skillset. 
 * What knowledge/skills do you expect to learn in this bootcamp?
@@ -23,3 +24,4 @@ I have not chosen a specific industry.
 Im not sure. From what i've read most likely cleaning/optimizing data sets.
 * What is your career goal?.
 I think it would be really intestersting to use my new skills in developping countries to help them solve some of their problems. 
+
