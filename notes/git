@@ -1,0 +1,44 @@
+GIT
+
+ls === list files for the working directory or file
+ls -a === ls with hidden files (start with .)
+ls -l === ls with details
+ls /Users/rbarr/ === ls specific directory or file
+pwd === absolute (full-length vs. relative) path of the working directory or file
+cd rbarr === change to directory "rbarr" in working directory
+cd .. === change to directory above working directory or file
+mkdir test === create directory "test" in working directory
+mkdir /Users/rbarr/test/test1 === create directory "test1" in specific (absolute or relative) path
+rmdir test === deletes empty directory
+rm -r test === deletes non-empty directory and all its contents (BE CAREFUL!)
+sudo reboot === reboot computer (password required)
+git clone https://github.com/<username>/<filename>.git === local copy of git
+
+export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+git checkout -b newfeature === created "new feature" branch and switched to it
+git checkout master === switch back to master branch
+git branch === lists all branches created/worked on locally
+git branch -a === lists all branches
+git pull === latest changes to all branches
+git pull origin master === specify which upstream/branch to pull from
+git add . === add all files since commit
+git commit -m "commit message" === committing additions
+git commit -am === adding and committing
+git push --set-upstream origin newfeature === declare where to push code to
+git init === initialize repository (repo)
+
+TO MERGE BRANCHES
+git checkout master
+git merge editingreadme
+
+git === collaboration
+  between github and local machine
+
+github === version control
+  master (owner) can provide access to others who will work on their own copies (branches) of the core code
+  after changes made, pull request sent to master to get incorporated to core code
+  code stored online (remotely) as a central repository so everyone can access
+  create copies (clones) onto local computer
+
+fork clone makechange gitstatus gitadd gitcommit gitpush gitpull

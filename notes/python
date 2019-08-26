@@ -1,0 +1,170 @@
+PYTHON
+
+pseudo-code === human-like explanation of code before writing it
+  laying out a plan can help in coding (better alternatives to logic)
+inputs are always read as string and need to be converted if other
+  type(x) === returns the type of the variable x
+%s === string place-holder for a variable
+
+data types === primitive data types (smallest units of data)
+  character
+  string (group of characters)
+  float
+  double float
+  integer
+  boolean
+data structures === complex data types (containers for primitive data types)
+  lists/arrays/sequences []
+    mutable (can change the elements of the data structure)
+    ordered
+  dictionaries {} === key-value pairs
+    mutable
+    unordered
+    .keys() & .values() === get keys and values as lists
+    .items() === can covert dictionaries to list of tuples
+    y[x] === add key y and value x
+    del x & del x[y]=== delete dictionary x and value y of dictionary x
+  tuples () === can have repetitions
+    immutable (cannot change the elements of the data structure once coded)
+    ordered
+    can be 1+ elements
+    del x === delete tuple x
+    can convert tuple to list via list comprehension across elements of tuple
+  sets () === unique values
+    immutable
+    ordered
+    set() = creates empty set (separates from tuple creation)
+    .add(x) = adds element x
+    .remove(x) = removes element x
+    a.union(b) === all of set a and set b
+    a.intersection(b) === commmon between set a and set b
+    a - b === all of a removing the intersection with b
+    .pop() = removes random element (cannot add an index)
+
+list functions
+  .append(x) === adds x to end of list
+  .insert(x, y) === adds y in position x of list
+  .remove(x) === removes first instance of x in list
+  .pop(x) === removes xth element in list
+  len(set(x)) vs len(x) === quick way to see if list has duplicate values
+list comprehensions === faster specifically for nested loops in list
+  list = [i for i in range(x)] === list from 0 to x-1
+  list = [i for i in range(x) if i >= y] === list from y to x-1
+list flattening
+  list = []
+  for x in list_list:
+    for y in x:
+      list.append(y)
+
+string functions 
+  x + y === combines the two strings x and y
+  x * 5 === combines x back-to-back 5 times
+  ' '.join(x) where x is a list of strings === combines the strings with spaces in between (space can be any delimiter)
+  x.split() === split string x by spaces (space can be any delimiter)
+  x.startswith(y) & x.endswith(y) === boolean asking whether string x starts and ends with string y (case-sensitive)
+  x.lower() & c.upper() & x.capitalize() & x.title() === change format of string x into all lower-case, all-uppercase, capital first word in sentences, and capital words like a title
+    x.upper() and x.lower() can be used to standardize text to not worry about case-sensitivity in other string functions
+  x.strip() & x.lstrip() & x.rstrip() === removes any space at the beginning or end, spaces at the beginning, and spaces at the end (space can be any character or group of characters)
+    spaces are treated as characters
+    order of the characters to be stripped does not matter
+  x.replace(y, z) === replaces string y with string z in string x
+  '''x
+    y z''' === allows you to create spaces while staying in the same string
+  "\n" === adds a space when printing
+  x in y === boolean asking whether string x in string y (case-sensitive)
+
+os library
+  .getcwd() === current working directory (like pwd in bash)
+  .listdir(x) === lists contents of directory x (like ls in bash)
+  can create list comprehensions with filters of files within a directory
+
+re library
+  re.findall('x', y) = finds all instances of an expression in a string and returns them as a list
+    re.findall('[x]', y) === a string in brackets will find any instance of any of the characters in x (x becomes unordered group of characters)
+  re.split('x', y) = splits string y by delimiter x
+    can use patterns for characters to find
+  re.sub('x', 'y', z) === replace any x in string z with y
+  '[a-z]' === lowercase letter between a and z
+    can define own range ('[r-w]')
+  '[A-Z]' === uppercase letter between A and Z
+  '[a-zA-Z]' === any letter
+    '[A-z]' is same
+  '[0-9]' === numeric character between 0 and 9
+    can define own range ('[0-2]')
+  '[a-zA-Z0-9 ]' === any character (can include space character anywhere to include those too)
+    order of characters does not matter (like .split() functions in lists)
+    within range, has to be in order (a-z NOT z-a)
+  '[^a-z]' === everything BUT lowecase letters between a and z
+    ^ is like a complement symbol
+  '[\w]' === Any alphanumeric character.
+  '[\W]' === Any non-alphanumeric character.
+  '[\d]' === Any numeric character.
+  '[\D]' === Any non-numeric character.
+  '[\s]' === Any whitespace characters.
+  '[\S]' === Any non-whitespace characters.
+  '[.]' === Any character except newline (\n).
+  [] === match set of characters inside
+  . === match any character except newline (\n)
+  ^ === match characteres not listed if within set (with []) OR match beginning of line (no [])
+  $ === match end of line
+  | === "or" operator
+  * === Matches previous character 0 or more times
+  + === Matches previous character 1 or more times
+  ? === Matches previous character 0 or 1 times (optional)
+  {} === Matches previous characters however many times specified within:
+    {n} === Exactly n times
+    {n,} === At least n times
+    {n,m} === Between n and m times
+    applied for the preceding character
+  \ === treats preceding character as literal
+
+paradigms
+  imperative === tell program how to do 
+    uses statements that change a program’s stateuses statements that change a program’s state
+      like your friend listening to Bob Ross tell them how to paint a landscape; he is giving them step by step directions to get the desired result
+    lay down the process exactly how it is
+    procedural === provide the methods/functions
+    object-oriented (oop) === objectify things to give characteristics
+      python considered object-oriented (variables, functions, etc. are objects)
+  declarative === tell program what to do
+    expresses the logic of a computation without describing its control flow
+      like asking your friend to draw a landscape; you don’t care how they draw it, that’s up to them
+    regex functions are declarative
+    don't know how it's happening
+    sql is declarative
+    functional === 
+
+errors
+  syntax === grammar error in the language
+  semantic/logical === not getting the right result
+    infinite loop
+  runtime/exceptions === errors when code is executed
+    undefined variable
+  error types
+    SyntaxError: when code has been typed incorrectly
+    AttributeError: when you try to access an attribute on an object that does not exist
+    KeyError: when you try to access a key in a dictionary that does not exist
+    TypeError: when an argument to a function is not of the right type
+      str instead of int
+    ValueError: when an argument to a function is of the right type but is not in the right domain
+      an empty string
+    ImportError: when an import fails
+      running function from library that has not been imported
+    IOError: when python cannot access a file correctly on disk
+      incorrect path to file
+
+lambda
+  can be used instead of def since it's shorter
+  lambda x: y === creates a function y based on input x
+    lambda x, y: z === creates a function z based on inputs x and y
+  can be used inside a list comprehension
+  can have if statements to define outputs based on inputs
+
+classes
+  way to define an object with attributes
+  __init__ === defines all actions that need to be performed when a new object is created
+    first function that is called
+    __ === indicate that this function is internal to the object and should not be called from outside the object
+  self === accessible to all other variables and methods inside the class
+    helps pass information around without having to recompute every time
+  when created a new object, it needs to include all attributes for the class of objects
