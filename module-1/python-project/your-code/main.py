@@ -53,7 +53,7 @@ def examine_item(item, room):
 
 	good_input = False
 	while good_input == False:
-		if room_items[room][item] :
+		if room_items[room][item] = :
 			good_input = True
 		else:
 			print("That's not a valid item")

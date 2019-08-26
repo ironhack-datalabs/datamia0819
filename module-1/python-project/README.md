@@ -16,7 +16,7 @@ Read the game narratives and technical requirements carefully. Plan how you will
 
 ![Game Map](escape-room-plan.jpg)
 
-### Game Narratives
+[### Game Narratives
 
 #### Game Room
 
