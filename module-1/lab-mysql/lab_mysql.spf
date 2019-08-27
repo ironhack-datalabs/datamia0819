@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>lab_mysql</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>kcid</key>
+			<string>990079327241291915</string>
+			<key>name</key>
+			<string>localhost</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8mb4</string>
+			<key>contentFilterV2</key>
+			<dict>
+				<key>children</key>
+				<array/>
+				<key>filterClass</key>
+				<string>groupNode</string>
+				<key>isConjunction</key>
+				<true/>
+			</dict>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK0HCBUWFxgZHSQoLDA0VSRudWxs0wkK
+			CwwQFFdOUy5rZXlzWk5TLm9iamVjdHNWJGNsYXNzow0OD4ACgAOA
+			BKMREhOABYAGgAiADFR0eXBlVHJvd3NUa2V5c18QJlNlbGVjdGlv
+			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
+			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
+			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
+			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeACldjdXN0X2lk0h4fLS5f
+			EA9OU011dGFibGVTdHJpbmejLS8jWE5TU3RyaW5n0h4fMTJeTlNN
+			dXRhYmxlQXJyYXmjMTMjV05TQXJyYXnSHh8iNaIiI18QD05TS2V5
+			ZWRBcmNoaXZlctE4OVRkYXRhgAEACAARABoAIwAtADIANwBFAEsA
+			UgBaAGUAbABwAHIAdAB2AHoAfAB+AIAAggCHAIwAkQC6AMEAwgDD
+			AMUAygDVAN4A9AD4AQUBDgETARUBFwEZAR4BKAEqATIBNwFJAU0B
+			VgFbAWoBbgF2AXsBfgGQAZMBmAAAAAAAAAIBAAAAAAAAADoAAAAA
+			AAAAAAAAAAAAAAGa
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {1227, 767}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>/* INSERT INTO salespersons (staff_id, staff_name, sales_id, store_id)
+VALUES
+    ('0', '00001', 'Petey Cruiser', 'Madrid'),
+	('1', '00002', 'Anna Sthesia', 'Barcelona'),
+	('2', '00003', 'Paul Molive', 'Berlin'),
+	('3', '00004', 'Gail Forcewind', 'Paris'),
+	('4', '00005', 'Paige Turner', 'Mimia'),
+	('5', '00006', 'Bob Frapples', 'Mexico City'),
+	('6', '00007', 'Walter Melon', 'Amsterdam'),
+	('7', '00008', 'Shonda Leer', 'São Paulo'); */
+	
+	
+/* update customers
+set cust_email = cust_id */
+
+/* update customers 
+set cust_email = CASE cust_id
+when 10001 then 'ppicasso@gmail.com'
+when 20001 then 'lincoln@us.gov'
+when 30001 then 'hello@napoleon.me'
+else cust_email
+end
+where cust_id IN (10001, 20001, 30001) */
+
+
+
+
+	
+</string>
+			<key>table</key>
+			<string>customers</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>214</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>/* INSERT INTO salespersons (staff_id, staff_name, sales_id, store_id)
+VALUES
+    ('0', '00001', 'Petey Cruiser', 'Madrid'),
+	('1', '00002', 'Anna Sthesia', 'Barcelona'),
+	('2', '00003', 'Paul Molive', 'Berlin'),
+	('3', '00004', 'Gail Forcewind', 'Paris'),
+	('4', '00005', 'Paige Turner', 'Mimia'),
+	('5', '00006', 'Bob Frapples', 'Mexico City'),
+	('6', '00007', 'Walter Melon', 'Amsterdam'),
+	('7', '00008', 'Shonda Leer', 'São Paulo'); */
+	
+	
+/* update customers
+set cust_email = cust_id */
+
+update customers 
+set cust_email = CASE cust_id
+when 10001 then 'ppicasso@gmail.com'
+when 20001 then 'lincoln@us.gov'
+when 30001 then 'hello@napoleon.me'
+else cust_email
+end
+where cust_id IN (10001, 20001, 30001)</string>
+		<string>update customers 
+set cust_email = CASE cust_id
+when 10001 then 'ppicasso@gmail.com'
+when 20001 then 'lincoln@us.gov'
+when 30001 then 'hello@napoleon.me'
+else cust_email
+end
+where cust_id IN (10001, 20001, 30001)</string>
+		<string>when 30001 then 'hello@napoleon.me'</string>
+		<string>/* INSERT INTO salespersons (staff_id, staff_name, sales_id, store_id)
+VALUES
+    ('0', '00001', 'Petey Cruiser', 'Madrid'),
+	('1', '00002', 'Anna Sthesia', 'Barcelona'),
+	('2', '00003', 'Paul Molive', 'Berlin'),
+	('3', '00004', 'Gail Forcewind', 'Paris'),
+	('4', '00005', 'Paige Turner', 'Mimia'),
+	('5', '00006', 'Bob Frapples', 'Mexico City'),
+	('6', '00007', 'Walter Melon', 'Amsterdam'),
+	('7', '00008', 'Shonda Leer', 'São Paulo'); */
+	
+	
+/* update customers
+set cust_email = cust_id */
+
+update customers 
+set cust_email = CASE cust_id
+when 10001 then 'ppicasso@gmail.com'
+when 20001 then 'lincoln@us.gov'
+when 30001 then 'hello@napoleon.me'</string>
+		<string>/* INSERT INTO salespersons (staff_id, staff_name, sales_id, store_id)
+VALUES
+    ('0', '00001', 'Petey Cruiser', 'Madrid'),
+	('1', '00002', 'Anna Sthesia', 'Barcelona'),
+	('2', '00003', 'Paul Molive', 'Berlin'),
+	('3', '00004', 'Gail Forcewind', 'Paris'),
+	('4', '00005', 'Paige Turner', 'Mimia'),
+	('5', '00006', 'Bob Frapples', 'Mexico City'),
+	('6', '00007', 'Walter Melon', 'Amsterdam'),
+	('7', '00008', 'Shonda Leer', 'São Paulo'); */
+	
+	
+/* update customers
+set cust_email = cust_id */
+
+update customers 
+set cust_email = CASE cust_id
+when 10001 then 'ppicasso@gmail.com'</string>
+		<string>/* INSERT INTO salespersons (staff_id, staff_name, sales_id, store_id)
+VALUES
+    ('0', '00001', 'Petey Cruiser', 'Madrid'),
+	('1', '00002', 'Anna Sthesia', 'Barcelona'),
+	('2', '00003', 'Paul Molive', 'Berlin'),
+	('3', '00004', 'Gail Forcewind', 'Paris'),
+	('4', '00005', 'Paige Turner', 'Mimia'),
+	('5', '00006', 'Bob Frapples', 'Mexico City'),
+	('6', '00007', 'Walter Melon', 'Amsterdam'),
+	('7', '00008', 'Shonda Leer', 'São Paulo'); */
+	
+	
+/* update customers
+set cust_email = cust_id */
+
+update customers 
+set cust_email = CASE cust_id
+when 10001 then 'ppicasso@gmail.com'
+when 20001 then 'lincoln@us.gov'
+when 30001 then 'hello@napoleon.me'
+end</string>
+		<string>/* INSERT INTO salespersons (staff_id, staff_name, sales_id, store_id)
+VALUES
+    ('0', '00001', 'Petey Cruiser', 'Madrid'),
+	('1', '00002', 'Anna Sthesia', 'Barcelona'),
+	('2', '00003', 'Paul Molive', 'Berlin'),
+	('3', '00004', 'Gail Forcewind', 'Paris'),
+	('4', '00005', 'Paige Turner', 'Mimia'),
+	('5', '00006', 'Bob Frapples', 'Mexico City'),
+	('6', '00007', 'Walter Melon', 'Amsterdam'),
+	('7', '00008', 'Shonda Leer', 'São Paulo'); */
+	
+	
+/* update customers
+set cust_email = cust_id */
+
+update customers 
+set cust_email = CASE cust_id
+when 10001 then 'ppicasso@gmail.com',
+when 20001 then 'lincoln@us.gov',
+when 30001 then 'hello@napoleon.me'</string>
+		<string>/* INSERT INTO salespersons (staff_id, staff_name, sales_id, store_id)
+VALUES
+    ('0', '00001', 'Petey Cruiser', 'Madrid'),
+	('1', '00002', 'Anna Sthesia', 'Barcelona'),
+	('2', '00003', 'Paul Molive', 'Berlin'),
+	('3', '00004', 'Gail Forcewind', 'Paris'),
+	('4', '00005', 'Paige Turner', 'Mimia'),
+	('5', '00006', 'Bob Frapples', 'Mexico City'),
+	('6', '00007', 'Walter Melon', 'Amsterdam'),
+	('7', '00008', 'Shonda Leer', 'São Paulo'); */
+	
+	
+/* update customers
+set cust_email = cust_id */
+
+update customers 
+set cust_email = CASE cust_id
+when 10001 then 'ppicasso@gmail.com',
+when 10002 then 'lincoln@us.gov',
+when 10003 then 'hello@napoleon.me'</string>
+		<string>/* INSERT INTO salespersons (staff_id, staff_name, sales_id, store_id)
+VALUES
+    ('0', '00001', 'Petey Cruiser', 'Madrid'),
+	('1', '00002', 'Anna Sthesia', 'Barcelona'),
+	('2', '00003', 'Paul Molive', 'Berlin'),
+	('3', '00004', 'Gail Forcewind', 'Paris'),
+	('4', '00005', 'Paige Turner', 'Mimia'),
+	('5', '00006', 'Bob Frapples', 'Mexico City'),
+	('6', '00007', 'Walter Melon', 'Amsterdam'),
+	('7', '00008', 'Shonda Leer', 'São Paulo'); */
+	
+	
+/* update customers
+set cust_email = cust_id */
+
+update salespersons
+set store_id = "Miami"
+where staff_id = 4</string>
+		<string>INSERT INTO salespersons (staff_id, staff_name, sales_id, store_id)
+VALUES
+    ('0', '00001', 'Petey Cruiser', 'Madrid'),
+	('1', '00002', 'Anna Sthesia', 'Barcelona'),
+	('2', '00003', 'Paul Molive', 'Berlin'),
+	('3', '00004', 'Gail Forcewind', 'Paris'),
+	('4', '00005', 'Paige Turner', 'Mimia'),
+	('5', '00006', 'Bob Frapples', 'Mexico City'),
+	('6', '00007', 'Walter Melon', 'Amsterdam'),
+	('7', '00008', 'Shonda Leer', 'São Paulo')</string>
+		<string>INSERT INTO invoices (invoice_id, invoice_num, invoice_date, invoice_car_id, invoice_cust_name, invoice_staff_id)
+VALUES
+    ('0', '852399038', '22-08-2018', '0', '1', '3'),
+	('1', '731166526', '31-12-2018', '3', '0', '5'),
+	('2', '271135104', '22-01-2019', '2', '2', '7')</string>
+		<string>INSERT INTO invoices (invoice_num, invoice_date, invoice_car_id, invoice_cust_name, invoice_staff_id)
+VALUES
+    ('0', '852399038', '22-08-2018', '0', '1', '3'),
+	('1', '731166526', '31-12-2018', '3', '0', '5'),
+	('2', '271135104', '22-01-2019', '2', '2', '7')</string>
+		<string>INSERT INTO invoices (invoice_num, invoice_date, invoice_car_id, invoice_cust_name, invoice_staff_id)
+VALUES
+    ('0', '852399038', '22-08-2018', '0', '1', '3'),
+	('1', '731166526', '31-12-2018', '3', '0', '5'),
+	('2', '271135104', '22-01-2019', '2', '2', '7'),</string>
+		<string>INSERT INTO invoices (invoice_num, invoice_date, invoice_car_id, invoice_cust_name, invoice_staff_id)
+VALUES
+    ('0', '852399038', '22-08-2018', '0', '1', '3'),
+	('1', '731166526', '31-12-2018', '3', '0', '5'),
+	('2', '271135104', '22-01-2019', '2', '2', '7'),
+{}</string>
+		<string>INSERT INTO invoices (invoice_num, invoice_date, invoice_car_id, invoice_cust_name, invoice_staff_id)
+VALUES
+    ('0', '852399038', '22-08-2018', '0', '1', '3')
+	('1', '731166526', '31-12-2018', '3', '0', '5')
+	('2', '271135104', '22-01-2019', '2', '2', '7')</string>
+		<string>'1', '731166526', '31-12-2018', '3', '0', '5')
+	('2', '271135104', '22-01-2019'</string>
+		<string>('1', '731166526', '31-12-2018', '3', '0', '5')
+	('2', '271135104', '22-01-2019'</string>
+		<string>INSERT INTO invoices (invoice_num, invoice_date, invoice_car_id, invoice_cust_name, invoice_staff_id)
+VALUES
+    ('0', '852399038', '22-08-2018', '0', '1', '3'),
+	('1', '731166526', '31-12-2018', '3', '0', '5')
+	('2', '271135104', '22-01-2019', '2', '2', '7')</string>
+		<string>INSERT INTO customers (cust_id, cust_name, cust_phone, cust_email, cust_address, cust_city, cust_state, cust_country, cust_postal)
+VALUES
+    ('10001', 'Pablo Picasso', '+34636176382', '-', 'Paseo de la Chopera, 14', 'Madrid', 'Madrid', 'Spain', 28045),
+	('20001', 'Abraham Lincoln', '+13059077086', '-', '120 SW 8th St', 'Miami', 'Florida', 'United States', 33130),
+	('30001', 'Napoléon Bonaparte', '+33179754000', '-', '40 Rue du Colisée', 'Paris', 'Île-de-France', 'France', 75008)</string>
+		<string>INSERT INTO cars (cars_id ,car_vin, car_manufacturer, car_model, car_year, car_color)
+VALUES
+    ('0','3K096I98581DHSNUP', 'Volkswagen', 'Tiguan', '2019', 'Blue'),
+    ('1','ZM8G7BEUQZ97IH46V', 'Peugeot', 'Rifter', '2019', 'Red'),
+    ('2','RKXVNNIHLVVZOUB4M', 'Ford', 'Fusion', '2018', 'White'),
+    ('3','HKNDGS7CU31E9Z7JW', 'Toyota', 'RAV4', '2018', 'Silver'),
+    ('4','DAM41UDN3CHU2WVF6', 'Volvo', 'V60', '2019', 'Gray'),
+    ('5','DAM41UDN3CHU2WVF6', 'Volvo', 'V60 Cross Country', '2019', 'Gray')</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>8.0.17</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
