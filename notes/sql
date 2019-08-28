@@ -1,0 +1,62 @@
+SQL
+
+rows === records, entities
+columns === fields, attributes
+  hold specific information
+e-r diagram === entity-relationship
+  entities will have attributes
+  entities represented by squares
+  attributes represented by circles
+    multi-value attributes === attributes that can have multiple values represented by double circle
+    derived attributes === attributes that are derived from others (like age) represented by dotted circle
+primary key === some unique, non-null id to differentiate records
+  helps to reduce repititions across tables
+foreign key === primary key on another table used to access that table's information
+cardinality === way to describe relationships
+  1:1 (ssn - customers)
+  1:m (purchases - customers)
+  n:m (products - customers)
+
+queries
+  CREATE DATABASE db;
+    === create database db schema to populate
+  USE db;
+    === specify database db to run queries on
+  CREATE TABLE x (
+      y1 z1 NOT NULL AUTO_INCREMENT,
+      y2 z2,
+      PRIMARY KEY (y1),
+      FOREIGN KEY (y2) REFERENCES db(tb)
+  );
+    === create table x with columns y1 (no nulls allowed and auto-incremented, primary key) and y2 (foreign key from database db table tb) with datatypes z1 and z2
+      datatypes char/varchar like need to specify value in parentheses (VARCHAR(100))
+  DROP TABLE IF EXISTS db.tb;
+    === deletes table tb completely
+  ALTER TABLE db.tb
+  MODIFY COLUMN x y;
+    === alter table tb column x to datatype y
+  ALTER TABLE db.tb
+  DROP COLUMN x;
+    === drop column x from table tb
+  ALTER TABLE db.tb
+  ADD COLUMN x y;
+    === add column x from table tb
+  CREATE TABLE db.tb
+  SUBQUERY;
+    === creates new table tb based on query
+  CREATE TEMPORARY TABLE db.tb
+  QUERY;
+    === creates temporary table tb based on query
+      data stored temporarily for session (data does not adjust with db)
+      subqueries/derived tables are stored for the query (data adjusts with db)
+  DELETE FROM db.tb
+    === deletes values in table tb, but not table
+  DELETE FROM db.tb
+  WHERE x
+    === deletes values in table tb under where condition x
+  INSERT INTO db.tb
+  SUBQUERY;
+    === way to repopulate an emptied table
+  UPDATE publications.store_sales_summary
+  SET x = x + 5;
+    === way to update values based on formula (can include where statement)
