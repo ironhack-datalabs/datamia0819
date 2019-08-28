@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>Car_Companies</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>kcid</key>
+			<string>4915012126147537800</string>
+			<key>name</key>
+			<string>127.0.0.1</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>1</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8mb4</string>
+			<key>contentFilterV2</key>
+			<dict>
+				<key>children</key>
+				<array/>
+				<key>filterClass</key>
+				<string>groupNode</string>
+				<key>isConjunction</key>
+				<true/>
+			</dict>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK0HCBUWFxgZHSQoLDA0VSRudWxs0wkK
+			CwwQFFdOUy5rZXlzWk5TLm9iamVjdHNWJGNsYXNzow0OD4ACgAOA
+			BKMREhOABYAGgAiADFR0eXBlVHJvd3NUa2V5c18QJlNlbGVjdGlv
+			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
+			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
+			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
+			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeAClJJRNIeHy0uXxAPTlNN
+			dXRhYmxlU3RyaW5noy0vI1hOU1N0cmluZ9IeHzEyXk5TTXV0YWJs
+			ZUFycmF5ozEzI1dOU0FycmF50h4fIjWiIiNfEA9OU0tleWVkQXJj
+			aGl2ZXLRODlUZGF0YYABAAgAEQAaACMALQAyADcARQBLAFIAWgBl
+			AGwAcAByAHQAdgB6AHwAfgCAAIIAhwCMAJEAugDBAMIAwwDFAMoA
+			1QDeAPQA+AEFAQ4BEwEVARcBGQEeASgBKgEtATIBRAFIAVEBVgFl
+			AWkBcQF2AXkBiwGOAZMAAAAAAAACAQAAAAAAAAA6AAAAAAAAAAAA
+			AAAAAAABlQ==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {1250, 702}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>CREATE DATABASE Car_Companies;
+USE Car_Companies;
+
+DROP TABLE Cars;
+DROP TABLE Costumer;
+DROP TABLE SalesPerson;
+DROP TABLE Invoice;
+
+CREATE TABLE Cars (
+	ID int NOT NULL AUTO_INCREMENT,
+	VIN CHAR(17),
+	Manufacturer VARCHAR(15),
+	Model VARCHAR(30),
+	Years CHAR(4),
+	Color VARCHAR(10),
+	primary key(ID)
+);
+
+INSERT INTO Cars (VIN, Manufacturer, Model, Years, Color)
+VALUES ("3K096I98581DHSNUP","Volkswagen","Tiguan","2019","Blue"),
+("ZM8G7BEUQZ97IH46V","Peugeot","Rifter","2019","Red"),
+("RKXVNNIHLVVZOUB4M","Ford","Fusion","2018","White"),
+("HKNDGS7CU31E9Z7JW","Toyota","RAV4","2018","Silver"),
+("DAM41UDN3CHU2WVF6","Volvo","V60","2019","Gray"),
+("DAM41UDN3CHU2WVF6","Volvo","V60 Cross Country","2019","Gray");
+
+CREATE TABLE SalesPerson (
+	ID int NOT NULL AUTO_INCREMENT,
+	Staff_Number CHAR(10),
+	Name VARCHAR(25),
+	Store_Loc CHAR(20),
+	primary key(ID)
+);
+
+INSERT INTO SalesPerson (Staff_Number, Name, Store_Loc)
+VALUES (" 00001 "," Petey Cruiser "," Madrid "),
+(" 00002 "," Anna Sthesia "," Barcelona "),
+(" 00003 "," Paul Molive "," Berlin "),
+(" 00004 "," Gail Forcewind "," Paris "),
+(" 00005 "," Paige Turner "," Mimia "),
+(" 00006 "," Bob Frapples "," Mexico City "),
+(" 00007 "," Walter Melon "," Amsterdam "),
+(" 00008 "," Shonda Leer "," São Paulo ");
+
+CREATE TABLE Costumer (
+	ID int NOT NULL AUTO_INCREMENT,
+	Costumer_ID CHAR(10),
+	Name VARCHAR(25),
+	Phone VARCHAR(20),
+	Email VARCHAR(30),
+	Address VARCHAR(60),
+	City VARCHAR(30),
+	State VARCHAR(18),
+	Country VARCHAR(20),
+	ZipCode VARCHAR(8),
+	primary key(ID)
+);
+
+INSERT INTO Costumer (Costumer_ID, Name, Phone, Email, Address, City, State, Country, ZipCode)
+VALUES (" 10001 "," Pablo Picasso "," +34 636 17 63 82 "," - "," Paseo de la Chopera, 14 "," Madrid "," Madrid "," Spain "," 28045 "),
+(" 20001 "," Abraham Lincoln "," +1 305 907 7086 "," - "," 120 SW 8th St "," Miami "," Florida "," United States "," 33130 "),
+(" 30001 "," Napoléon Bonaparte "," +33 1 79 75 40 00 "," - "," 40 Rue du Colisée "," Paris "," Île-de-France "," France "," 75008 ");
+
+CREATE TABLE Invoice (
+	ID int NOT NULL AUTO_INCREMENT,
+	Invoice_Num VARCHAR(20), 
+	Dates DATE,
+	Car INT,
+	Costumer INT,
+	SalesPerson INT,
+	primary key(ID),
+	FOREIGN KEY (Car) REFERENCES Cars(ID),
+	FOREIGN KEY (Costumer) REFERENCES Costumer(ID),
+	FOREIGN KEY (SalesPerson) REFERENCES SalesPerson(ID)
+);
+
+INSERT INTO Invoice (Invoice_Num, Dates, Car, Costumer, SalesPerson)
+VALUES (" 852399038 "," 2018-08-22 ","1","2","4"),
+(" 731166526 "," 2018-12-31 ","4","1","6"),
+(" 271135104 "," 2019-01-22 ","1","3","8");
+
+
+
+
+
+
+</string>
+			<key>table</key>
+			<string>Costumer</string>
+			<key>view</key>
+			<string>SP_VIEW_CONTENT</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>189</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>CREATE TABLE Cars (
+	ID int NOT NULL AUTO_INCREMENT,
+	VIN CHAR(17),
+	Manufacturer VARCHAR(15),
+	Model VARCHAR(30),
+	Years CHAR(4),
+	Color VARCHAR(10),
+	primary key(ID)
+);
+INSERT INTO Cars (VIN, Manufacturer, Model, Years, Color)
+VALUES ("3K096I98581DHSNUP","Volkswagen","Tiguan","2019","Blue"),
+("ZM8G7BEUQZ97IH46V","Peugeot","Rifter","2019","Red"),
+("RKXVNNIHLVVZOUB4M","Ford","Fusion","2018","White"),
+("HKNDGS7CU31E9Z7JW","Toyota","RAV4","2018","Silver"),
+("DAM41UDN3CHU2WVF6","Volvo","V60","2019","Gray"),
+("DAM41UDN3CHU2WVF6","Volvo","V60 Cross Country","2019","Gray");
+CREATE TABLE SalesPerson (
+	ID int NOT NULL AUTO_INCREMENT,
+	Staff_Number CHAR(10),
+	Name VARCHAR(25),
+	Store_Loc CHAR(20),
+	primary key(ID)
+);
+INSERT INTO SalesPerson (Staff_Number, Name, Store_Loc)
+VALUES (" 00001 "," Petey Cruiser "," Madrid "),
+(" 00002 "," Anna Sthesia "," Barcelona "),
+(" 00003 "," Paul Molive "," Berlin "),
+(" 00004 "," Gail Forcewind "," Paris "),
+(" 00005 "," Paige Turner "," Mimia "),
+(" 00006 "," Bob Frapples "," Mexico City "),
+(" 00007 "," Walter Melon "," Amsterdam "),
+(" 00008 "," Shonda Leer "," São Paulo ");
+CREATE TABLE Costumer (
+	ID int NOT NULL AUTO_INCREMENT,
+	Costumer_ID CHAR(10),
+	Name VARCHAR(25),
+	Phone VARCHAR(20),
+	Email VARCHAR(30),
+	Address VARCHAR(60),
+	City VARCHAR(30),
+	State VARCHAR(18),
+	Country VARCHAR(20),
+	ZipCode VARCHAR(8),
+	primary key(ID)
+);
+INSERT INTO Costumer (Costumer_ID, Name, Phone, Email, Address, City, State, Country, ZipCode)
+VALUES (" 10001 "," Pablo Picasso "," +34 636 17 63 82 "," - "," Paseo de la Chopera, 14 "," Madrid "," Madrid "," Spain "," 28045 "),
+(" 20001 "," Abraham Lincoln "," +1 305 907 7086 "," - "," 120 SW 8th St "," Miami "," Florida "," United States "," 33130 "),
+(" 30001 "," Napoléon Bonaparte "," +33 1 79 75 40 00 "," - "," 40 Rue du Colisée "," Paris "," Île-de-France "," France "," 75008 ");
+CREATE TABLE Invoice (
+	ID int NOT NULL AUTO_INCREMENT,
+	Invoice_Num VARCHAR(20), 
+	Dates DATE,
+	Car INT,
+	Costumer INT,
+	SalesPerson INT,
+	primary key(ID),
+	FOREIGN KEY (Car) REFERENCES Cars(ID),
+	FOREIGN KEY (Costumer) REFERENCES Costumer(ID),
+	FOREIGN KEY (SalesPerson) REFERENCES SalesPerson(ID)
+);
+INSERT INTO Invoice (Invoice_Num, Dates, Car, Costumer, SalesPerson)
+VALUES (" 852399038 "," 2018-08-22 ","1","2","4"),
+(" 731166526 "," 2018-12-31 ","4","1","6"),
+(" 271135104 "," 2019-01-22 ","1","3","8")</string>
+		<string>DROP TABLE Cars;
+DROP TABLE Costumer;
+DROP TABLE SalesPerson</string>
+		<string>DROP TABLE Invoice</string>
+		<string>DROP TABLE Cars</string>
+		<string># ************************************************************
+# Sequel Pro SQL dump
+# Version 5438
+#
+# https://www.sequelpro.com/
+# https://github.com/sequelpro/sequelpro
+#
+# Host: 127.0.0.1 (MySQL 8.0.16)
+# Database: publications
+# Generation Time: 2019-08-27 19:26:54 +0000
+# ************************************************************
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+SET NAMES utf8mb4;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+# Dump of table authors
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `authors`</string>
+		<string>UPDATE Costumer
+SET Email = CASE
+	WHEN Name = ' Abraham Lincoln ' THEN ' lincoln@us.gov '
+	WHEN Name = ' Napoléon Bonaparte ' THEN ' hello@napoleon.me '
+	else Email
+	END
+WHERE Name in (' Abraham Lincoln ', ' Napoléon Bonaparte ')</string>
+		<string>UPDATE Costumer
+SET Email = CASE
+	WHEN ' Abraham Lincoln ' THEN ' lincoln@us.gov '
+	WHEN ' Napoléon Bonaparte ' THEN ' hello@napoleon.me '
+	END
+WHERE NAME in (' Abraham Lincoln ', ' Napoléon Bonaparte ')</string>
+		<string>UPDATE Costumer
+SET Email = CASE
+	WHEN ' Abraham Lincoln ' THEN ' lincoln@us.gov '
+	WHEN ' Napoléon Bonaparte ' THEN ' hello@napoleon.me '
+	END
+WHERE NAME in ('' Abraham Lincoln ', ' Napoléon Bonaparte ');</string>
+		<string>UPDATE Costumer
+SET Email CASE
+WHEN ' Abraham Lincoln ' THEN ' lincoln@us.gov '
+WHEN ' Napoléon Bonaparte ' THEN ' hello@napoleon.me '
+END
+WHERE NAME in ('' Abraham Lincoln ', ' Napoléon Bonaparte ');</string>
+		<string>UPDATE Costumer
+SET Email CASE Name
+WHEN ' Abraham Lincoln ' THEN ' lincoln@us.gov '
+WHEN ' Napoléon Bonaparte ' THEN ' hello@napoleon.me '
+END
+WHERE NAME in ('' Abraham Lincoln ', ' Napoléon Bonaparte ');</string>
+		<string>UPDATE Costumer
+SET Email CASE Name
+WHEN ' Abraham Lincoln ' THEN ' lincoln@us.gov '
+WHEN ' Napoléon Bonaparte ' THEN ' hello@napoleon.me '
+END</string>
+		<string>UPDATE Costumer
+SET Email CASE Name
+WHEN ' Abraham Lincoln ' THEN ' lincoln@us.gov '
+WHEN ' Napoléon Bonaparte ' THEN ' hello@napoleon.me '</string>
+		<string>UPDATE `Costumer`
+SET Email = ' ppicasso@gmail.com '
+WHERE Name = ' Pablo Picasso '</string>
+		<string>UPDATE SalesPerson
+SET Store_Loc = ' Miami '
+WHERE Store_Loc = 'Miami'</string>
+		<string>UPDATE SalesPerson
+SET Store_Loc = ' Miami '
+WHERE Store_Loc = ' Mimia '</string>
+		<string>UPDATE SalesPerson
+SET Store_Loc = 'Miami'
+WHERE Store_Loc = ' Mimia '</string>
+		<string>UPDATE SalesPerson
+SET Store_Loc = 'Miami'
+WHERE Store_Loc = 'Mimia'</string>
+		<string>UPDATE `Costumer`
+SET Store_Loc = 'Miami'
+WHERE Store_Loc = 'Mimia'</string>
+		<string>UPDATE `Costumer`
+SET City = 'Miami'
+WHERE City = 'Mimia'</string>
+		<string>UPDATE SalesPerson
+SET City = 'Miami'
+WHERE City = 'Mimia'</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>8.0.17</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
