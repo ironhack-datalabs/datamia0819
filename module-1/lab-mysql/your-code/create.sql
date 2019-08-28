@@ -1,5 +1,12 @@
 CREATE DATABASE lab_mysql;
 USE lab_mysql;
+
+DROP TABLE IF EXISTS invoices;
+DROP TABLE IF EXISTS salespersons;
+DROP TABLE IF EXISTS stores;
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS cars;
+
 CREATE TABLE customers (
     id BIGINT NOT NULL AUTO_INCREMENT,
 	first_name VARCHAR(50) NOT NULL,

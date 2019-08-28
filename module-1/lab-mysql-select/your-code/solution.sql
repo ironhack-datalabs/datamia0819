@@ -59,11 +59,11 @@ SELECT
 	authors.au_id 'Author ID'
     ,au_lname 'Last Name'
     ,au_fname 'First Name'
-    ,SUM(advance + ytd_sales * price * royalty * .01 * royaltyper * .01) 'Profit'
+    ,ROUND(SUM(advance + ytd_sales * price * royalty * .01) * royaltyper * .01, 2) 'Profit'
 FROM authors
 LEFT JOIN titleauthor ON titleauthor.au_id = authors.au_id
 LEFT JOIN titles ON titles.title_id = titleauthor.title_id
 GROUP BY 
 	authors.au_id
-ORDER BY SUM(ytd_sales) DESC
+ORDER BY SUM(advance + ytd_sales * price * royalty * .01) * royaltyper * .01 DESC
 LIMIT 3

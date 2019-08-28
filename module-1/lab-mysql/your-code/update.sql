@@ -1,6 +1,7 @@
 UPDATE stores
 SET city = 'Miami'
 WHERE id = 5;
+
 UPDATE customers
 SET email = CASE id
 	WHEN 1 THEN 'ppicasso@gmail.com'
