@@ -118,6 +118,19 @@ GROUP BY authors.au_id
 ORDER BY TitleSales DESC
 
 
+-- Bonus
+
+SELECT SUM(titles.price * (titles.royalty / 100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3
+
+
+
 
 
 </string>
@@ -137,6 +150,96 @@ ORDER BY TitleSales DESC
 	<array/>
 	<key>queryHistory</key>
 	<array>
+		<string>SELECT SUM(titles.price * (titles.royalty / 100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3</string>
+		<string>SELECT SUM(titles.price * (titles.royalty / 100) titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3</string>
+		<string>-- Challange 3
+SELECT authors.au_id as Authors_id, authors.au_lname as lastName, authors.au_fname as FirstName, SUM(titles.ytd_sales) as TitleSales
+from authors 
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+GROUP BY authors.au_id
+ORDER BY TitleSales DESC
+limit 3
+
+-- Challange 4 
+
+SELECT authors.au_id as authors_id, authors.au_lname as LastName, authors.au_fname as FirstName, SUM(titles.ytd_sales) as TitleSales
+FROM authors
+JOIN titleauthor ON authors.au_id = titleauthor.au_id
+JOIN titles ON titles.title_id = titleauthor.title_id
+JOIN publishers ON titles.pub_id = publishers.pub_id
+GROUP BY authors.au_id
+ORDER BY TitleSales DESC
+
+
+-- Bonus
+
+SELECT SUM(titles.price * (titles.royalty / 100) titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3</string>
+		<string>SELECT SUM(titles.price * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3</string>
+		<string>SELECT SUM(titles.price * (titles.royalty/100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3</string>
+		<string>SELECT SUM(titles.price * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC</string>
+		<string>SELECT SUM(titles.price * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit</string>
+		<string>SELECT SUM(titles.price * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName</string>
+		<string>SELECT SUM (titles.price * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName</string>
+		<string>SELECT SUM (titles.price * titles.ytd_sales * (titles.royalty / 100) + titles.advance) as TotalProfit</string>
+		<string>SELECT SUM (titles.price * titles.ytd_sales * (titles.royalty / 100) + titles.advance) as Total Profit</string>
+		<string>SELECT SUM (titles.price * titles.ytd_sales * (titles.royalty / 100) + titles.advance) from titles</string>
+		<string>SELECT sum(titles.price * titles.ytd_sales * (titles.royalty / 100) + titles.advance)</string>
+		<string>SELECT authors.au_id as authors_id, authors.au_lname as LastName, authors.au_fname as FirstName, SUM(titles.ytd_sales) as TitleSales
+FROM authors
+JOIN titleauthor ON authors.au_id = titleauthor.au_id
+JOIN titles ON titles.title_id = titleauthor.title_id
+JOIN publishers ON titles.pub_id = publishers.pub_id
+GROUP BY authors.au_id
+ORDER BY TitleSales DESC</string>
 		<string>DESC</string>
 		<string>SELECT authors.au_id as Authors_id, authors.au_lname as lastName, authors.au_fname as FirstName, SUM(titles.ytd_sales) as TitleSales
 from authors 
@@ -165,13 +268,6 @@ from authors
 join titleauthor on authors.au_id = titleauthor.au_id
 join titles on titles.title_id = titleauthor.title_id
 join publishers on titles.pub_id = publishers.pub_id</string>
-		<string>SELECT authors.au_id as authors_id, authors.au_lname as LastName, authors.au_fname as FirstName, SUM(titles.ytd_sales) as TitleSales
-FROM authors
-JOIN titleauthor ON authors.au_id = titleauthor.au_id
-JOIN titles ON titles.title_id = titleauthor.title_id
-JOIN publishers ON titles.pub_id = publishers.pub_id
-GROUP BY authors.au_id
-ORDER BY TitleSales DESC</string>
 		<string>SELECT authors.au_id as authors_id, authors.au_lname as LastName, authors.au_fname as FirstName, COALESCE(titles.ytd_sales, 0) as TitleSales
 FROM authors
 JOIN titleauthor ON authors.au_id = titleauthor.au_id
@@ -179,149 +275,6 @@ JOIN titles ON titles.title_id = titleauthor.title_id
 JOIN publishers ON titles.pub_id = publishers.pub_id
 GROUP BY authors.au_id
 ORDER BY TitleSales DESC</string>
-		<string>SELECT authors.au_id as authors_id, authors.au_lname as LastName, authors.au_fname as FirstName, SUM(titles.ytd_sales) as TitleSales
-FROM authors
-JOIN titleauthor ON authors.au_id = titleauthor.au_id
-JOIN titles ON titles.title_id = titleauthor.title_id
-JOIN publishers ON titles.pub_id = publishers.pub_id
-GROUP BY authors.au_id
-ORDER BY TitleSales DESC
-LIMIT 23</string>
-		<string>-- Challange 3
-SELECT authors.au_id as Authors_id, authors.au_lname as lastName, authors.au_fname as FirstName, SUM(titles.ytd_sales) as TitleSales
-from authors 
-join titleauthor on authors.au_id = titleauthor.au_id
-
-
--- Challange 4 
-
-SELECT authors.au_id as authors_id, authors.au_lname as LastName, authors.au_fname as FirstName, SUM(titles.ytd_sales) as TitleSales
-FROM authors
-JOIN titleauthor ON authors.au_id = titleauthor.au_id
-JOIN titles ON titles.title_id = titleauthor.title_id
-JOIN publishers ON titles.pub_id = publishers.pub_id
-GROUP BY authors.au_id
-ORDER BY TitleSales DESC
-LIMIT 23</string>
-		<string>SELECT authors.au_id as authors_id, authors.au_lname as LastName, authors.au_fname as FirstName, SUM(titles.ytd_sales) as TitleSales
-FROM authors
-JOIN titleauthor
-ON authors.au_id = titleauthor.au_id
-JOIN titles
-ON titles.title_id = titleauthor.title_id
-JOIN publishers
-ON titles.pub_id = publishers.pub_id
-GROUP BY authors.au_id
-ORDER BY TitleSales DESC
-LIMIT 3</string>
-		<string>-- Challange 3
-select sales.qty as quantity, sales.title_id as titleid, titleauthor.`au_id` as Authors_id, authors.lname as last_name
-from sales 
-right join titleauthor on titleauthor.title_id = sales.title_id
-
-
--- Challange 4 
-
-SELECT authors.au_id as authors_id, authors.au_lname as LastName, authors.au_fname as FirstName, SUM(titles.ytd_sales) as TitleSales
-FROM authors
-JOIN titleauthor
-ON authors.au_id = titleauthor.au_id
-JOIN titles
-ON titles.title_id = titleauthor.title_id
-JOIN publishers
-ON titles.pub_id = publishers.pub_id
-GROUP BY authors.au_id
-ORDER BY TitleSales DESC
-LIMIT 3</string>
-		<string>SELECT authors.au_id, authors.au_lname as LastName, authors.au_fname as FirstName, SUM(titles.ytd_sales) as TitleSales
-FROM authors
-JOIN titleauthor
-ON authors.au_id = titleauthor.au_id
-JOIN titles
-ON titles.title_id = titleauthor.title_id
-JOIN publishers
-ON titles.pub_id = publishers.pub_id
-GROUP BY authors.au_id
-ORDER BY TitleSales DESC
-LIMIT 3</string>
-		<string>-- Challange 3
-select sales.qty as quantity, sales.title_id as titleid, titleauthor.`au_id` as Authors_id, authors.lname as last_name
-from sales 
-right join titleauthor on titleauthor.title_id = sales.title_id
-
-
-
-/* inner join titles on authors.au_id = sales.title_id
-group by authors.au_id */
-
-/* select au_id from authors  */
-
-
--- Challange 4</string>
-		<string>-- Challange 3
-select sales.qty as quantity, sales.title_id as titleid, titleauthor.`au_id` as Authors_id
-from sales 
-right join titleauthor on titleauthor.title_id = sales.title_id
-
-
-
-/* inner join titles on authors.au_id = sales.title_id
-group by authors.au_id */
-
-/* select au_id from authors  */
-
-
--- Challange 4</string>
-		<string>select sales.qty as quantity, sales.title_id as titleid, titleauthor.`au_id` as Authors_id
-from sales 
-inner join titleauthor on titleauthor.title_id = sales.title_id</string>
-		<string>inner</string>
-		<string>-- Challange 3
-select sales.qty as quantity, sales.title_id as titleid, titleauthor.`au_id` as Authors_id
-from sales 
-left join titleauthor on titleauthor.title_id = sales.title_id
-
-
-
-/* inner join titles on authors.au_id = sales.title_id
-group by authors.au_id */
-
-/* select au_id from authors  */
-
-
--- Challange 4</string>
-		<string>-- Challange 3
-select sum(sales.qty) as quantity, sales.title_id as titleid, titleauthor.`au_id` as Authors_id
-from sales 
-inner join titleauthor on titleauthor.title_id = sales.title_id
-
-
-
-/* inner join titles on authors.au_id = sales.title_id
-group by authors.au_id */
-
-/* select au_id from authors  */
-
-
--- Challange 4</string>
-		<string>select sales.qty as quantity, sales.title_id as titleid, titleauthor.`au_id` as Authors_id
-from sales 
-inner join titleauthor on titleauthor.title_id = sales.title_id
-group by titleauthor.au_id</string>
-		<string>-- Challange 3
-select sales.qty as quantity, sales.title_id as titleid, titleauthor.`au_id` as Authors_id
-from sales 
-inner join titleauthor on titleauthor.title_id = sales.title_id
-group by sales
-
-
-/* inner join titles on authors.au_id = sales.title_id
-group by authors.au_id */
-
-/* select au_id from authors  */
-
-
--- Challange 4</string>
 	</array>
 	<key>rdbms_type</key>
 	<string>mysql</string>
