@@ -104,24 +104,35 @@ Note: you don't have to use Numpy in this question.
 """
 print(d)
 
-for x in range(len(d)):
-    j = 0
-    for y in d[x]:
-        k=0
-        for item in d[x][j]:
-            if item > d_min and item < d_mean:
-                f[x][j][k] = 25
-            elif item > d_mean and item < d_max:
-                f[x][j][k] = 75
-            elif item == d_mean:
-                f[x][j][k] = 0
-            elif item == d_max:
-                f[x][j][k] = 100
-            k+=1    
-        j+=1
+# for x in range(len(d)):
+#     j = 0
+#     for y in d[x]:
+#         k=0
+#         for item in d[x][j]:
+#             if item > d_min and item < d_mean:
+#                 f[x][j][k] = 25
+#             elif item > d_mean and item < d_max:
+#                 f[x][j][k] = 75
+#             elif item == d_mean:
+#                 f[x][j][k] = 0
+#             elif item == d_max:
+#                 f[x][j][k] = 100
+#             k+=1    
+#         j+=1
 
-
-
+for i in range(len(d)):
+    for j in range(len(d[i])):
+        for k in range(len(d[i][j])):
+            if d[i][j][k] > d_min and d[i][j][k] < d_mean:
+                f[i][j][k] = 25
+            elif d[i][j][k] > d_mean and d[i][j][k] < d_max:
+                f[i][j][k] = 75
+            elif d[i][j][k] == d_mean:
+                f[i][j][k] = 50
+            elif d[i][j][k] == d_max:
+                f[i][j][k] = 100
+            else:
+                f[i][j][k] = 0
 # for matrix in d:
 #     for array in matrix:
 #         for value in array:
@@ -150,10 +161,10 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
         [ 75.,  75.,  75.,  75.,  75.],
         [ 25.,  75.,   0.,  75.,  75.]]])
 """
-print(f)
+print(f) 
 
 
-"""
+'''
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
 ("A", "B", "C", "D", and "E") to label the array elements? You are expecting the result to be:
 array([[[ 'D',  'D',  'D',  'B',  'D'],
@@ -164,8 +175,22 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'D',  'D',  'D',  'D',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
+'''
+f = np.full([2,3,5],"")
+for i in range(len(d)):
+    for j in range(len(d[i])):
+        for k in range(len(d[i][j])):
+            if d[i][j][k] > d_min and d[i][j][k] < d_mean:
+                f[i][j][k] = "B"
+            elif d[i][j][k] > d_mean and d[i][j][k] < d_max:
+                f[i][j][k] = "D"
+            elif d[i][j][k] == d_mean:
+                f[i][j][k] = "C"
+            elif d[i][j][k] == d_max:
+                f[i][j][k] = "E"
+            else:
+                f[i][j][k] = "A"
+print(f)
 
 
 
-
-"""
