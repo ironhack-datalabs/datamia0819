@@ -23,7 +23,7 @@ queries
   USE db;
     === specify database db to run queries on
   CREATE TABLE x (
-      y1 z1 NOT NULL AUTO_INCREMENT,
+      y1 z1 NOT NULL UNIQUE AUTO_INCREMENT,
       y2 z2,
       PRIMARY KEY (y1),
       FOREIGN KEY (y2) REFERENCES db(tb)
@@ -41,6 +41,9 @@ queries
   ALTER TABLE db.tb
   ADD COLUMN x y;
     === add column x from table tb
+  ALTER TABLE db.tb
+  AUTO_INCREMENT = 0;
+    === re-start auto-incremented variable to 0
   CREATE TABLE db.tb
   SUBQUERY;
     === creates new table tb based on query

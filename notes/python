@@ -168,3 +168,64 @@ classes
   self === accessible to all other variables and methods inside the class
     helps pass information around without having to recompute every time
   when created a new object, it needs to include all attributes for the class of objects
+
+numpy library
+  np.random.random((x, y, z, etc.)) === create array with random values (between 0 and 1) of size (x, y, z, etc.)
+  np.random.rand(x, y, z, etc.) === create array with random values (between 0 and 1) of size (x, y, z, etc.)
+  np.random.randint(x, y, size = (z, w, etc.)) === create array with random values (between x and y-1) of size (z, w, etc.)
+    if y is None, between 0 and x
+  np.random.random_integers(x, y, size = (z, w, etc.)) === create array with random values (between x and y) of size (z, w, etc.)
+    if y is None, between 0 and x
+    deprecated in python to randint function above
+  x.transpose === transpose array x
+    x.T is same
+  x.shape === size of array x
+  x.size === number of elements in array x
+  x[y] === y row of array x
+    y input functions as indices (start at 0)
+  x[:, y] === y column of array x
+  x[:z, y] === y column of array x from rows 0 to z
+  x[y, z, etc.] === y row, z column, etc. groups of array x
+  np.array(x) === converts list (or list of lists, tuples, etc.) x into an array
+  np.sum(x) === sum of all elements in array x
+  np.sum(x, axis = 0) === sum of all elements in each column in array x
+  np.sum(x, axis = 1) === sum of all elements in each row in array x
+
+data
+  structured
+    SQL
+    AWS
+    Google Cloud Platform
+    Scala
+  unstructured
+    MongoDB
+    Ccassandra
+  three types
+    dataframes (python)
+      each column is a series (instead of arrays or lists) and has headers associated with them
+    datasets
+
+pandas
+  pd.Series(z) === creates series object with elements of x
+  x[y] === element y in series x
+  len(x) === number of elements in series x
+  pd.DataFrame(x, columns = y) === creates dataframe with data x (as list or matrix-type) and column names from list y
+     pd.DataFrame(x) === creates dataframe with data x (as list or matrix-type) and column names by index
+  len(x) === number of rows in dataframe x
+  x.head(y) === shows first y rows of dataframe x
+    y defaults to 0 if None
+  x.tail(y) === shows last y rows of dataframe x
+    y defaults to 0 if None
+  x.describe(y) === basic descriptives of column(s) y in dataframe x
+    y defaults to all columns if None
+  x[y].sum() === returns sum of column y of dataframe x
+  x[y].mean() === returns mean of column y of dataframe x
+  x[y].median() === returns median of column y of dataframe x
+  x[y].max() === returns max of column y of dataframe x
+  x[y].min() === returns min of column y of dataframe x
+  x[y].quantile(z) === returns the value of quantile z in column y of dataframe x
+  x[y].count() === returns count of column y of dataframe x
+  x[y].nunique() === returns count of distinct values in column y of dataframe x
+  x.dtypes === data types of each series in dataframe x
+  x.shape === shape of dataframe x
+  x.iloc[y][z] === get value of cell at position (y,z) of dataframe x
