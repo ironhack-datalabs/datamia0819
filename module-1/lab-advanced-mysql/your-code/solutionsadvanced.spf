@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>publications</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>kcid</key>
+			<string>990079327241291915</string>
+			<key>name</key>
+			<string>localhost</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8mb4</string>
+			<key>contentFilterV2</key>
+			<dict>
+				<key>children</key>
+				<array/>
+				<key>filterClass</key>
+				<string>groupNode</string>
+				<key>isConjunction</key>
+				<true/>
+			</dict>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJX
+			TlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAF
+			gAdUdHlwZVRyb3dzXxAdU2VsZWN0aW9uRGV0YWlsVHlwZU5TSW5k
+			ZXhTZXTSFwsYGVxOU1JhbmdlQ291bnQQAIAG0hscHR5aJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1pOU0luZGV4U2V0oh8gWk5TSW5kZXhTZXRY
+			TlNPYmplY3TSGxwiI1xOU0RpY3Rpb25hcnmiIiBfEA9OU0tleWVk
+			QXJjaGl2ZXLRJidUZGF0YYABAAgAEQAaACMALQAyADcAQABGAE0A
+			VQBgAGcAagBsAG4AcQBzAHUAdwB8AIEAoQCmALMAtQC3ALwAxwDQ
+			ANsA3gDpAPIA9wEEAQcBGQEcASEAAAAAAAACAQAAAAAAAAAoAAAA
+			AAAAAAAAAAAAAAABIw==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {1225, 791}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>-- Challenge 1
+SELECT SUM(titles.price * (titles.royalty / 100) * (titleauthor.royaltyper / 100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3
+
+-- Challenge 2
+
+DROP TABLE publications.author_sales1;
+CREATE TABLE publications.author_sales1
+SELECT
+    authors.au_id
+    ,price
+    ,ytd_sales
+    ,royalty
+    ,advance
+    ,royaltyper
+    ,'Profit'
+FROM authors
+JOIN titleauthor ON titleauthor.au_id = authors.au_id
+JOIN titles ON titles.title_id = titleauthor.title_id;
+
+SELECT
+    au_id 'Author ID'
+    ,ROUND(SUM((price * ytd_sales * royalty / 100 + advance) * royaltyper / 100), 2) 'Profit'
+FROM author_sales1
+GROUP BY
+    au_id
+ORDER BY
+    SUM((price * ytd_sales * royalty / 100 + advance) * royaltyper / 100) DESC
+LIMIT 3
+
+/* -- Challenge 3
+Create Table most_profiting_authors(
+Authorid varchar(255),
+Profits varchar (255)) */
+DROP TABLE if exists most_profiting_authors;
+CREATE table most_profiting_authors 
+SELECT SUM(titles.price * (titles.royalty / 100) * (titleauthor.royaltyper / 100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id 
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+</string>
+			<key>table</key>
+			<string>most_profiting_authors</string>
+			<key>view</key>
+			<string>SP_VIEW_CONTENT</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>214</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>DROP TABLE if exists most_profiting_authors;
+CREATE table most_profiting_authors 
+SELECT SUM(titles.price * (titles.royalty / 100) * (titleauthor.royaltyper / 100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id 
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC</string>
+		<string>DROP TABLE if exists most_profiting_authors;
+CREATE table most_profiting_authors 
+SELECT SUM(titles.price * (titles.royalty / 100) * (titleauthor.royaltyper / 100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id 
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3</string>
+		<string>DROP TABLE if exists most_profiting_authors;
+CREATE table most_profiting_authors 
+SELECT SUM(titles.price * (titles.royalty / 100) * (titleauthor.royaltyper / 100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, 
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3</string>
+		<string>DROP TABLE if exists most_profiting_authors</string>
+		<string>DROP TABLE most_profiting_authors if exists</string>
+		<string>DROP TABLE most_profiting_authors if_exists</string>
+		<string>DROP TABLE most_profiting_authors</string>
+		<string>SELECT SUM(titles.price * (titles.royalty / 100) * (titleauthor.royaltyper / 100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3</string>
+		<string>DROP TABLE publications.author_sales1;
+CREATE TABLE publications.author_sales1
+SELECT
+    authors.au_id
+    ,price
+    ,ytd_sales
+    ,royalty
+    ,advance
+    ,royaltyper
+    ,'Profit'
+FROM authors
+JOIN titleauthor ON titleauthor.au_id = authors.au_id
+JOIN titles ON titles.title_id = titleauthor.title_id;
+SELECT
+    au_id 'Author ID'
+    ,ROUND(SUM((price * ytd_sales * royalty / 100 + advance) * royaltyper / 100), 2) 'Profit'
+FROM author_sales1
+GROUP BY
+    au_id
+ORDER BY
+    SUM((price * ytd_sales * royalty / 100 + advance) * royaltyper / 100) DESC
+LIMIT 3</string>
+		<string>SELECT
+    authors.au_id
+    ,price
+    ,ytd_sales
+    ,royalty
+    ,advance
+    ,royaltyper
+    ,'Profit'
+FROM authors
+JOIN titleauthor ON titleauthor.au_id = authors.au_id
+JOIN titles ON titles.title_id = titleauthor.title_id;
+SELECT
+    au_id 'Author ID'
+    ,ROUND(SUM((price * ytd_sales * royalty / 100 + advance) * royaltyper / 100), 2) 'Profit'
+FROM author_sales1
+GROUP BY
+    au_id
+ORDER BY
+    SUM((price * ytd_sales * royalty / 100 + advance) * royaltyper / 100) DESC
+LIMIT 3</string>
+		<string>CREATE TABLE publications.author_sales1
+SELECT
+    authors.au_id
+    ,price
+    ,ytd_sales
+    ,royalty
+    ,advance
+    ,royaltyper
+FROM authors
+JOIN titleauthor ON titleauthor.au_id = authors.au_id
+JOIN titles ON titles.title_id = titleauthor.title_id;
+SELECT
+    au_id 'Author ID'
+    ,ROUND(SUM((price * ytd_sales * royalty / 100 + advance) * royaltyper / 100), 2) 'Profit'
+FROM author_sales1
+GROUP BY
+    au_id
+ORDER BY
+    SUM((price * ytd_sales * royalty / 100 + advance) * royaltyper / 100) DESC
+LIMIT 3</string>
+		<string>drop table test</string>
+		<string>insert INTO test
+SELECT SUM(titles.price * (titles.royalty / 100) * (titleauthor.royaltyper / 100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3
+
+-- Challenge 2
+
+DROP TABLE publications.author_sales1</string>
+		<string>insert INTO test
+SELECT SUM(titles.price * (titles.royalty / 100) * (titleauthor.royaltyper / 100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3</string>
+		<string>insert into table test
+SELECT SUM(titles.price * (titles.royalty / 100) * (titleauthor.royaltyper / 100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3</string>
+		<string>Create table test;
+SELECT SUM(titles.price * (titles.royalty / 100) * (titleauthor.royaltyper / 100) * titles.ytd_sales + titles.advance) as TotalProfit, authors.au_id as Authors_id, authors.au_lname as LastName, authors.au_fname as FirstName
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+join titles on titles.title_id = titleauthor.title_id
+join publishers on titles.pub_id = publishers.pub_id
+Group by authors.au_id
+Order by TotalProfit DESC
+limit 3</string>
+		<string>insert into table most_profiting_authors 
+select au_id from authors</string>
+		<string>insert into table most_profiting_authors (au_id)
+select au_id from authors</string>
+		<string>insert into table most_profiting_authors (au_id, TotalProfit)
+select TotalProfit</string>
+		<string>Create Table most_profiting_authors(
+Authorid varchar(255),
+Profits varchar (255))</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>8.0.17</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
