@@ -73,7 +73,7 @@ join titles
 on titles.title_id = step2.title_id
 order by profits desc limit 3;
 
-#CHALLENGE 3 
+#CHALLENGE 3- Create permanent table with output of challenge 1 or 2 (both same).
 CREATE TABLE most_profitting_authors
 Select titles.advance + step2.royalty1 as profits, step2.au_id 
 from step2
