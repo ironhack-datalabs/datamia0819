@@ -1,0 +1,21 @@
+stats
+
+descriptive (differential) === defining the data
+  measures of central tendency === mean, median, mode, 
+  measures of frequency === frequency
+  measures of dispersion === range, standard deviation, variance
+  regarding the entire population
+inferential === making inferences from samples
+  hypothesis testing
+  regarding the sample
+  normal distribution === N(μ, σ^2)
+    μ (mean), σ^2 (variance) === population parameters (of the normal distribution)
+    these parameters are alaways assumed to be fixed
+    x̄, s^2 === sample/random statistics
+    random sample collected to reduce bias and increase generalizability
+
+plots
+  box-whisker/box-cox plot === based on min, max, median, Q1, and Q3
+    IQR = Q3 - Q1
+    if value outside of (Q1 - 1.5 * IQR, Q3 + 1.5 * IQR), then it's considered an outlier
+      represeneted by * or circle

@@ -211,6 +211,9 @@ pandas
   len(x) === number of elements in series x
   pd.DataFrame(x, columns = y) === creates dataframe with data x (as list or matrix-type) and column names from list y
      pd.DataFrame(x) === creates dataframe with data x (as list or matrix-type) and column names by index
+  pd.DataFrame.from_dict(x) === creates dataframe from dictionary x (keys are column headers)
+    pd.DataFrame.from_dict(x, orient = 'index', columns = y) === creates dataframe from dictionary x (keys are column rows) with column names y
+    pd.DataFrame.from_dict(x, orient = 'index') === creates dataframe from dictionary x (keys are column rows) with column names as indices
   len(x) === number of rows in dataframe x
   x.head(y) === shows first y rows of dataframe x
     y defaults to 0 if None
@@ -218,14 +221,41 @@ pandas
     y defaults to 0 if None
   x.describe(y) === basic descriptives of column(s) y in dataframe x
     y defaults to all columns if None
+  x.dropna() === drops rows with any columns containing na/null data values
+  x.fillna(y) === replaces all na/null data values with y
+  x[y] === returns columns in list y of dataframe x
   x[y].sum() === returns sum of column y of dataframe x
+    no columns results in sum of each column in dataframe x
   x[y].mean() === returns mean of column y of dataframe x
   x[y].median() === returns median of column y of dataframe x
   x[y].max() === returns max of column y of dataframe x
   x[y].min() === returns min of column y of dataframe x
   x[y].quantile(z) === returns the value of quantile z in column y of dataframe x
+  x[y].var(z) === returns the variance of column y in dataframe x
+  x[y].std(z) === returns the standard deviation of column y in dataframe x
   x[y].count() === returns count of column y of dataframe x
   x[y].nunique() === returns count of distinct values in column y of dataframe x
+  x[y].unique() === returns distinct values in column y of dataframe x
   x.dtypes === data types of each series in dataframe x
   x.shape === shape of dataframe x
-  x.iloc[y][z] === get value of cell at position (y,z) of dataframe x
+  x.iloc[y][z] === get value(s) of cell(s) at position(s) (y,z) of dataframe x (uses column indices)
+  x.loc[y][z] === get value(s) of cell(s) at position(s) (y,z) of dataframe x (uses column names)
+  x.index = index range of dataframe x
+    x.index.values = array of index values
+  x[y:z] === get rows y to z-1 from dataframe x
+
+  orient = 'records' === if json file has repeated key-value pairs for each record
+
+data files
+  .csv === separated by ,
+  .txt (pipe) === separated by |
+  .txt (tab) === separated by <tab>
+  .xlsx === messy af
+
+axis = 0 axis = 1
+
+matplotlib
+  %matplotlib inline === print output just after the execution of the code
+  x[y].boxplot() === return boxplot of column(s) y in dataframe x
+  x[y].hist(bins = z) === return histogram of column(s) y in dataframe x with z bins
+    x[y].hist() === return histogram of column(s) y in dataframe x
