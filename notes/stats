@@ -13,9 +13,188 @@ inferential === making inferences from samples
     these parameters are alaways assumed to be fixed
     x̄, s^2 === sample/random statistics
     random sample collected to reduce bias and increase generalizability
+correlation === how things change together (or not)
+  measures a non-linear relationship
+  ρ > 0 === x and y increase/decrease together
+  ρ < 0 === x and y increase/decrease oppositely
+  ρ = 0 === x changes, but y does not
+    -1 < ρ < 1 === range for ρ
+    ρ = cov(x, y) / sqrt(σ^2(x) * σ^2(y))
+  types
+    pearson === assumption that the relationship between the variables is linear
+      also assumes that both x and y are normally distributed N(x)(μ(x), σ^2(x)) and N(y)(μ(y), σ^2(y))
+      most popular
+    spearman === for non-linear
+      second-most popular
+    kendall === for non-linear
+
 
 plots
   box-whisker/box-cox plot === based on min, max, median, Q1, and Q3
     IQR = Q3 - Q1
     if value outside of (Q1 - 1.5 * IQR, Q3 + 1.5 * IQR), then it's considered an outlier
       represeneted by * or circle
+  scatterplot
+    to see the relationship between two variables (one on each axis)
+
+probability (P)
+  chance, likelihood, relative frequency
+  0 < P < 1
+  complement (Q) = 1 - P
+  experiments === trial being performed
+    coin flip
+  sample space === universal set of possible values from experiment
+    {h, t}
+  outcomes === what happened in each run of the experiment
+    (h, h, t, etc.)
+  P(h) = 1 / 2, P(t) = 1 / 2
+    for i in sample space, sum(P(i)) = 1
+
+odds === p / q
+combination (C) === choice/selection
+  order does not matter
+  nCi = n! / (i! * (n - i)!)
+permutation (P) === arrangement
+  order matters
+  nPi = n! / (n - i)!
+  larger than the combination unless choosing 1
+
+probability distributions
+  continuous === measurements
+    can contain any value
+    uniform === (a = start, b = end)
+      constant probability of 1 within interval
+      standard means a = 0 and b = 1
+    normal === bell-shaped, symmetric (μ = mean, σ^2 = variance)
+      standard means μ = 0 and σ^2 = 1
+      empirical rule = 68% between μ-1σ and μ-1σ
+    exponential === time between events (λ = average time between two events)
+      related to poisson
+    normal (symmetric), standard normal, gamma, beta, t, F, chi, etc.
+    many fall under exponential family
+  discrete === counts
+    only integer values
+    bernoulli random variable === one trial with two outcomes (p = p(success))
+    binomial === two or more independent bernoulli trials (p = p(success), n = number of trials, i = number of successes)
+    poisson === event count (λ = average events in time interval)
+    geometric, hypergeometric, etc.
+  understanding distributions of probabilities in the data helps make decisions better
+    patterns in how data behaves can be mapped to known probability distributions
+  certain models make assumptions about the distribution of the data
+    regression (linear/non-linear/uni-, multi-) === independence, normality, etc.
+    can create transformations to try and fit data into an assumed distribution
+      log, power, box-cox, etc.
+  scale parameters === move desnity/mass function (μ)
+  shap_parameters === change density/mass function (σ^2)
+  skewness
+    positive/right = median < mean
+    negative/left = median > mean
+  kurtosis === closeness to the mean
+  probability mass functions (pmf) === for discrete
+  probability density function (pdf) === for continuous
+    standard normal pdf === N(0, 1) === e^(-x^2 / 2) / sqrt(2 * π)
+  cumulative density function (cdf)
+    standard normal cdf === ∫ (N(0, 1)) === ∫ (e^(-x^2 / 2) / sqrt(2 * π))
+    for any x, it's the sum of the area to the left of the cdf
+    chances of getting x value or less
+logic symbols
+  A ∩ B === all observations in sets A and B
+  A ∪ B === all observations in sets A or B
+  A' === complement of A (all observations not in set A)
+axioms
+  1 === probability of event is non-negative real number
+  2 === probability of entire sample space = 1
+  3 === probability of union of mutually exclusive events is equal to the sum of probability of these events
+    mutual exclusivity === two events cannot happen at the same time
+      no === P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
+      yes === P(A ∪ B) = P(A) + P(B)
+    independence === chances of events do not depend on one another
+      no === P(A ∩ B) = P(A) * P(B) / P(A | B) = P(A) * P(B) / P(B | A) 
+      yes = P(A ∩ B) = P(A) * P(B)
+
+hypothesis testing
+  hypothesis is an assumption regarding the population (distribution or parameters)
+  hypotheses
+    H0 = null hypothesis
+      always equality
+    H1 = alternative hypothesis
+      always inequality
+        one-sided = < or >
+        two-sided = ≠
+    samples
+      one-sample (x1)
+        z-test === standard normal distribution
+          z = (x̄ - μ0) / (σ0 / sqrt(n))
+            standard error = σ / sqrt(n)
+        t-test === student t-distribution
+          do not know σ^2 of population
+          t = (x̄ - μ0) / (s / sqrt(n))
+            standard error = s / sqrt(n)
+        significance and confidence
+          α = significance level (usually 5%)
+          confidence level = 1 - α
+          lower α leads to more confident results
+        rejection
+          cases
+            reject H0
+            fail to reject H0 (accept H1)
+          region
+            based on area under the curve
+            two-sided = split α
+            one-sided = full α
+          p-value === probabilty of finding a sample as or more extreme than what was observed
+            p-value < α = reject H0
+            p-value > α = fail to reject H0
+      two-sample (x1, x2)
+        dependent samples (matched-pairs) === before/after
+          tested as one-sample t-test with differences
+        independent samples
+          equal variances
+            can test whether the variances of the two populations are same or not
+            variances pooled together and use one sp for calculations
+          unequal variances
+            variances kept separate
+      anova (x1, x2, ..., xn)
+        treatment conditions
+          observations randomized
+
+confidence interval
+  z = x̄ ± zcrit * σ0 / sqrt(n)
+  t = x̄ ± tcrit * s / sqrt(n)
+
+bayes
+  theorem === P(A | B) = P(B | A) * P(A) / P(B)
+  law of total probability
+    B is subset of A
+    divide set A into disjoint sets (A1, A2, ..., An)
+    P(A) = P(A1 ∪ A2 ∪ ... ∪ An)
+    P(A) = P(A1) + P(A2) + ... + P(An))
+    P(B) = P(A1 ∩ B) + P(A2 ∩ B) + ... + P(An ∩ B))
+    P(B) = P(B ∩ A1) + P(B ∩ A2) + ... + P(B ∩ An)
+    P(B) = P(B | A1) * P(A1) + P(B | A2) * P(A2) + ... + P(B | An) * P(An)
+  P(A) === prior probability
+    probability before seeing data
+  P(B | A) === likelihood
+    probability of data under hypothesized distribution
+  P(B) === marginal proabability
+    probability of data under any distribution (no assumptions)
+  P(A | B) === posterior probability
+    probability to compute after seeing data
+  bayesian stats
+    with new data, update parameters
+      posterior ∝ likelihood * prior
+      prior = N(μ, σ^2)
+      posterior = N(μ + 3, σ^2 * 9)
+    versus classical stats (parameters do not change)
+
+regression
+  relationship between numerical variables
+    scatterplots can visually demonstrate this relationship
+  line of best fit === minimizes sum square of errors (SSE)
+    SSE = sum(y - ŷ)^2 = sum(error)^2
+    residual === error
+      actual outcome (y) - predicted outcome (ŷ)
+    y = b + mx
+      actual line
+    ŷ = β0 + 
+      predicted line

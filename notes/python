@@ -190,6 +190,7 @@ numpy library
   np.sum(x) === sum of all elements in array x
   np.sum(x, axis = 0) === sum of all elements in each column in array x
   np.sum(x, axis = 1) === sum of all elements in each row in array x
+  np.where(x, y, z) === like if-then statement with x as the condition, y as the value if true, and z, if false
 
 data
   structured
@@ -223,7 +224,10 @@ pandas
     y defaults to all columns if None
   x.dropna() === drops rows with any columns containing na/null data values
   x.fillna(y) === replaces all na/null data values with y
+  x.drop_duplicates() === drops all duplicate rows (same values on all columns)
+    x.drop_duplicates(subset = y) === drops all duplicate rows (same values on y columns)
   x[y] === returns columns in list y of dataframe x
+  x[y:z] === get rows y to z-1 from dataframe x
   x[y].sum() === returns sum of column y of dataframe x
     no columns results in sum of each column in dataframe x
   x[y].mean() === returns mean of column y of dataframe x
@@ -236,15 +240,25 @@ pandas
   x[y].count() === returns count of column y of dataframe x
   x[y].nunique() === returns count of distinct values in column y of dataframe x
   x[y].unique() === returns distinct values in column y of dataframe x
+  x[y].map(str) === maps numeric column y in dataframe x to string
   x.dtypes === data types of each series in dataframe x
   x.shape === shape of dataframe x
   x.iloc[y][z] === get value(s) of cell(s) at position(s) (y,z) of dataframe x (uses column indices)
   x.loc[y][z] === get value(s) of cell(s) at position(s) (y,z) of dataframe x (uses column names)
   x.index = index range of dataframe x
     x.index.values = array of index values
-  x[y:z] === get rows y to z-1 from dataframe x
+  x.groupby(y)z.w() === group dataframe x by column(s) y and aggregate values for column(s) z using function w
+  x.groupby(y, as_index = False).agg({z: w}) === group dataframe x by column(s) y and aggregate values for column(s) z using function(s) w
+    without as_index results in y as the index of the resulting dataframe
+    without specifying z, will aggregate across all columns using function w
 
-  orient = 'records' === if json file has repeated key-value pairs for each record
+matplotlib
+  %matplotlib inline === print output just after the execution of the code
+  x[y].boxplot() === return boxplot of column(s) y in dataframe x
+  x[y].hist(bins = z) === return histogram of column(s) y in dataframe x with z bins
+    x[y].hist() === return histogram of column(s) y in dataframe x
+
+orient = 'records' === if json file has repeated key-value pairs for each record
 
 data files
   .csv === separated by ,
@@ -253,9 +267,3 @@ data files
   .xlsx === messy af
 
 axis = 0 axis = 1
-
-matplotlib
-  %matplotlib inline === print output just after the execution of the code
-  x[y].boxplot() === return boxplot of column(s) y in dataframe x
-  x[y].hist(bins = z) === return histogram of column(s) y in dataframe x with z bins
-    x[y].hist() === return histogram of column(s) y in dataframe x
