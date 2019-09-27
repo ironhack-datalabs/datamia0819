@@ -1,0 +1,31 @@
+,id,abbreviation,city,conference,division,name
+0,1,ATL,Atlanta,East,Southeast,Hawks
+1,2,BOS,Boston,East,Atlantic,Celtics
+2,3,BKN,Brooklyn,East,Atlantic,Nets
+3,4,CHA,Charlotte,East,Southeast,Hornets
+4,5,CHI,Chicago,East,Central,Bulls
+5,6,CLE,Cleveland,East,Central,Cavaliers
+6,7,DAL,Dallas,West,Southwest,Mavericks
+7,8,DEN,Denver,West,Northwest,Nuggets
+8,9,DET,Detroit,East,Central,Pistons
+9,10,GSW,Golden State,West,Pacific,Warriors
+10,11,HOU,Houston,West,Southwest,Rockets
+11,12,IND,Indiana,East,Central,Pacers
+12,13,LAC,LA,West,Pacific,Clippers
+13,14,LAL,Los Angeles,West,Pacific,Lakers
+14,15,MEM,Memphis,West,Southwest,Grizzlies
+15,16,MIA,Miami,East,Southeast,Heat
+16,17,MIL,Milwaukee,East,Central,Bucks
+17,18,MIN,Minnesota,West,Northwest,Timberwolves
+18,19,NOP,New Orleans,West,Southwest,Pelicans
+19,20,NYK,New York,East,Atlantic,Knicks
+20,21,OKC,Oklahoma City,West,Northwest,Thunder
+21,22,ORL,Orlando,East,Southeast,Magic
+22,23,PHI,Philadelphia,East,Atlantic,76ers
+23,24,PHX,Phoenix,West,Pacific,Suns
+24,25,POR,Portland,West,Northwest,Trail Blazers
+25,26,SAC,Sacramento,West,Pacific,Kings
+26,27,SAS,San Antonio,West,Southwest,Spurs
+27,28,TOR,Toronto,East,Atlantic,Raptors
+28,29,UTA,Utah,West,Northwest,Jazz
+29,30,WAS,Washington,East,Southeast,Wizards
