@@ -1,0 +1,106 @@
+select * from authors
+where authors.state = "CA";
+
+
+#select * from authors as A
+#where A.state = "CA"
+
+#Like clause along with where
+select * from authors
+where authors.city like 'B%';
+
+#Sorting Results 
+select * from authors
+where authors.state = "CA"
+Order by `au_fname`
+
+
+select au_fname, au_lname,phone,address from `authors`
+where `authors`.`city` = "San Francisco";
+
+
+SELECT publishers.pub_name AS Publisher_Name, COUNT(titles.title_id) AS Titles
+FROM publishers 
+INNER JOIN titles
+ON publishers.pub_id = titles.pub_id
+GROUP BY pub_name;
+
+
+SELECT pub_name AS Publisher_Name, COUNT(titles.title_id) AS Titles
+FROM publishers 
+LEFT JOIN titles 
+ON publishers.pub_id = titles.pub_id
+GROUP BY pub_name;
+
+# It is imporatant to note that in the Group By statement, we are using all the columns that we want to print and that are not aggregated
+SELECT titles.title, titles.type, titles.price, SUM(sales.qty) AS units_sold
+FROM publications.sales sales
+RIGHT JOIN titles
+ON sales.title_id = titles.title_id
+GROUP BY titles.title, titles.type, titles.price;
+
+
+## UNION for OUTER JOINS 
+SELECT * FROM employee
+RIGHT JOIN jobs
+ON jobs.job_id = jobs.job_id;
+
+SELECT *
+FROM employee AS emp
+LEFT JOIN publications.jobs job
+ON emp.job_id = job.job_id;
+
+## Combined Query / UNION
+SELECT *
+FROM publications.employee emp
+RIGHT JOIN publications.jobs job
+ON emp.job_id = job.job_id
+UNION
+SELECT *
+FROM publications.employee emp
+LEFT JOIN publications.jobs job
+ON emp.job_id = job.job_id;
+
+
+## Updtate Tables vs Insert 
+insert `Dummy` set Name = 'Himanshu Aggarwal', `Address` = 'aafjaadfbablaj'
+
+UPDATE `Dummy` SET Name = "Hi", `Address` = "NEW PLACE"
+where id = 2;
+
+# Delete vs Drop
+delete from Dummy where id = 2;
+# drop Dummy;
+
+
+# Sub Queries 
+SELECT Store, Items/Orders AS AvgItems, Qty/Items AS AvgQty
+FROM (
+    SELECT stor_name AS Store, COUNT(DISTINCT(ord_num)) AS Orders, COUNT(title_id) AS Items, SUM(qty) AS Qty
+    FROM sales
+    INNER JOIN stores 
+    ON stores.stor_id = sales.stor_id
+    GROUP BY Store
+)summary;
+
+
+SELECT Store, Items/Orders AS AvgItems, Qty/Items AS AvgQty
+FROM (
+    SELECT stores.stor_name AS Store, COUNT(DISTINCT(ord_num)) AS Orders, COUNT(title_id) AS Items, SUM(qty) AS Qty
+    FROM publications.sales sales
+    INNER JOIN publications.stores stores ON stores.stor_id = sales.stor_id
+    GROUP BY Store
+) summary;
+
+
+
+
+
+
+
+
+select version();
+select database();
+select user();
+show status;
+show variables;
