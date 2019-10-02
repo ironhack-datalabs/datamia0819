@@ -341,16 +341,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 39,
+   "execution_count": 43,
    "metadata": {},
    "outputs": [
     {
-     "ename": "SyntaxError",
-     "evalue": "EOL while scanning string literal (<ipython-input-39-c89531487cba>, line 6)",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[0;36m  File \u001b[0;32m\"<ipython-input-39-c89531487cba>\"\u001b[0;36m, line \u001b[0;32m6\u001b[0m\n\u001b[0;31m    websites['CONTENT_LENGTH'].reaplce('nan, '' )\u001b[0m\n\u001b[0m                                                  ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m EOL while scanning string literal\n"
-     ]
+     "data": {
+      "text/plain": [
+       "Index(['URL', 'URL_LENGTH', 'NUMBER_SPECIAL_CHARACTERS', 'CHARSET', 'SERVER',\n",
+       "       'CONTENT_LENGTH', 'WHOIS_COUNTRY', 'WHOIS_STATEPRO', 'WHOIS_REGDATE',\n",
+       "       'WHOIS_UPDATED_DATE', 'TCP_CONVERSATION_EXCHANGE',\n",
+       "       'DIST_REMOTE_TCP_PORT', 'REMOTE_IPS', 'APP_BYTES', 'SOURCE_APP_PACKETS',\n",
+       "       'REMOTE_APP_PACKETS', 'SOURCE_APP_BYTES', 'REMOTE_APP_BYTES',\n",
+       "       'APP_PACKETS', 'DNS_QUERY_TIMES', 'Type'],\n",
+       "      dtype='object')"
+      ]
+     },
+     "execution_count": 43,
+     "metadata": {},
+     "output_type": "execute_result"
     }
    ],
    "source": [
@@ -359,9 +367,10 @@
     "websites['WHOIS_STATEPRO']=websites['WHOIS_STATEPRO'].replace('None','')\n",
     "websites['WHOIS_REGDATE']=websites['WHOIS_REGDATE'].replace('None','')\n",
     "websites['WHOIS_UPDATED_DATE']=websites['WHOIS_UPDATED_DATE'].replace('None','')\n",
-    "websites['CONTENT_LENGTH'].reaplce('nan, '' )\n",
+    "websites['CONTENT_LENGTH']=websites['CONTENT_LENGTH'].replace('nan','')\n",
+    "websites['CONTENT_LENGTH'].replace('NaN', '' )\n",
+    "   \n",
     "                                   \n",
-    "                                   NaN\n",
     "\n",
     "# Checking col names\n",
     "websites.columns"
@@ -369,7 +378,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 44,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -388,7 +397,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 38,
+   "execution_count": 45,
    "metadata": {},
    "outputs": [
     {
@@ -458,7 +467,7 @@
        "Name: CONTENT_LENGTH, Length: 1781, dtype: float64>"
       ]
      },
-     "execution_count": 38,
+     "execution_count": 45,
      "metadata": {},
      "output_type": "execute_result"
     }
