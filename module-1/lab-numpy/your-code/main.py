@@ -1,68 +1,95 @@
 #1. Import the NUMPY package under the name np.
 
-
+import numpy as np
 
 #2. Print the NUMPY version and the configuration.
 
-
+print(np.version.version)
 
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
 
-
+a = np.random.random((2,3,5))
+a1 = np.random.rand(2,3,5)
+a2= np.random.randint(1,size=(2,3,5))
 
 #4. Print a.
 
-
+print (a)
 
 #5. Create a 5x2x3 3-dimensional array with all values equaling 1.
 #Assign the array to variable "b"
 
-
+b= np.full((5,2,3), 1)
+b1 = np.ones((5, 3, 2), dtype = int)
 
 #6. Print b.
 
-
+print(b)
 
 #7. Do a and b have the same size? How do you prove that in Python code?
 
+equal = np.array_equal(a,b)
+print("A&B are :",equal)
 
+equal1= (a.shape==b.shape)
+print(equal1)
 
 
 #8. Are you able to add a and b? Why or why not?
 
+# The shapes do not match. Thus, we must use the resize function in order to find common ground.
 
+# print(a.resize(b.shape))
+# print(a+b)
+# print(a.size==b.size)
+# print(a.shape==b.shape)
 
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
 
-
+c= b1.T
+c1= b.transpose()
+c2= np.transpose(b1)
+print(c)
+print(a.size==c.size)
+print(a.shape==c.shape)
 
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
 
+d = a + c
 
+print(d)
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
 
-
+print(a,'\n')
+print(d,'\n')
 
 
 #12. Multiply a and c. Assign the result to e.
 
-
+e = a * c
+print("E is:",e,'\n')
 
 #13. Does e equal to a? Why or why not?
 
-
+print(np.array_equal(a, e))
 
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
 
+d_max= d.max()
+d_min= d.min()
+d_mean= d.mean()
 
+print(d_max)
+print(d_min)
+print(d_mean)
 
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
-
+f=d.copy()
 
 
 """
@@ -112,3 +139,23 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+
+g = f.copy().astype(str)
+
+for i in range(len(d)):
+    for j in range(len(d[i])):
+        for k in range(len(d[i][j])):
+            if d[i][j][k] > d_min and d[i][j][k] < d_mean:
+                g[i][j][k] ='B'
+            elif d[i][j][k]> d_mean and d[i][j][k] <d_max:
+                g[i][j][k] = 'D'
+            elif d[i][j][k] == d_mean:
+                g[i][j][k] ='C'
+            elif d[i][j][k] == d_min:
+                g[i][j][k]='A'
+            elif d[i][j][k] == d_max:
+                g[i][j][k]='E'
+            else:
+                g[i][j][k]=0
+                
+    print('g',g)
